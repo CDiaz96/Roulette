@@ -1,0 +1,27 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+}
+img{
+  height: 200px;
+}
+.spin{
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  transform-style: preserve-3d;
+}
+.spin{
+    width: 200px;
+    height: 200px;
+      animation: flipTails 3s;
+      animation-fill-mode: backwards;
+}
+@keyframes flipTails {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(1620deg);
+  }
+}

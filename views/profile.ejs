@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cass Casino</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="page-header text-center">
+      <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <img id="wheel" src="https://images.vexels.com/media/users/3/151205/isolated/preview/8857efb275fbf2435db40a222d05b1e6-roulette-wheel-icon-by-vexels.png" alt="">
+
+    <br>
+    <label for="color">Bet on Red or Black</label>
+    <select name="color" id="color">
+      <option value="red">Red</option>
+      <option value="black">black</option>
+    </select>
+
+    <input type="number" name="bet" required></input>
+    <button name="bet" type="submit">Submit</button>
+
+    <br>
+    <p>result: <span id="result"></span></p>
+    <p>Wins:<span id="playerWins">0</span> </p>
+    <p>Loses: <span id="playerLoses">0</span></p>
+    <p>Your starting amount is $1000</p>
+    <span>How much money you have $</span>
+    <span id="betMoney">
+      <% for(var i=0; i<roulette.length; i++) {%>
+      <%= roulette[i].money %>
+
+      <% } %></span>
+
+
+  </div>
+
+
+  <% if (user.local.email ==="admin@admin") { %>
+  <% for(var i=0; i<roulette.length; i++) {%>
+
+  <p>result: <span><%= roulette[i].name %></span></p>
+  <p>Wins:<span><%= roulette[i].playwinTotal %></span> </p>
+  <p>Loses: <span><%= roulette[i].playerloseTotal %></span></p>
+  <p>Your starting amount is $1000</p>
+  <span>How much money you have $</span>
+  <span><%= roulette[i].money %></span>
+
+  <% } %>
+  <% } else { %>
+  <% } %>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
